@@ -1,0 +1,14 @@
+#!/bin/bash
+if [ -d "$1" ]; then
+    echo "Detectada carpeta: Comprimiendo e incriptando..."
+    tar -cz "$1" | gpg --symmetric --cipher-algo AES256 -o "$1.tar.gz.gpg"
+
+elif [ -f "$1" ]; then
+    echo "Detectado archivo: Encriptando $1..."
+    gpg --symmetric --cipher-algo AES256 "$1"
+
+else
+ echo "No se encuentra"
+fi
+
+echo "Exito"
