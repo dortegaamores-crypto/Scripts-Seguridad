@@ -1,0 +1,4 @@
+#!/bin/bash
+ESCRIBIRDOCUMENTO="$1"
+
+gpg -d "$1" > recuperado.txt
