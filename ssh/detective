@@ -1,0 +1,4 @@
+#!/bin/bash
+IP=$1
+PUERTO=$2
+curl -S http://$1:$2 | grep -oE "[a-zA-Z0-9._-]+" | sort -u > nombres_encontrados.txt
