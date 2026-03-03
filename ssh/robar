@@ -1,0 +1,10 @@
+#!/bin/bash
+
+PUERTO=$1
+DOCUMENTO=$2
+IP=$3
+echo "Robando documentos"
+
+wget -r -np -nH --cut-dirs=1 "http://$3:$1/$2"
+
+echo "LISTO REVISA TU CARPETA"
