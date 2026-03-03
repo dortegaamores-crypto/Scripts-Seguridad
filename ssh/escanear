@@ -1,0 +1,9 @@
+#!/bin/bash
+PUERTO=$1
+IP=$2
+
+echo "ATACANDO OBJETIVO: $IP EN PUERTO: $PUERTO"
+
+sudo nmap -sV --script=http-enum -p $PUERTO $IP
+
+echo "ESCANEO FIANALIZADO"
