@@ -1,7 +1,7 @@
  GNU nano 7.2               server                        
 #!/bin/bash
 # Averiguamos nuestra IP automáticamente
-MI_IP=$(hostname -I | awk '{print $1}')
+IP_ATACANTE="192.168.1.109"
 
 echo "---------------------------------------------------->
 echo "  ARSENAL DE INTRUSIÓN - PANEL DE CONTROL"
