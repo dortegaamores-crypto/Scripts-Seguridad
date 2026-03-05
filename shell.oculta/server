@@ -1,7 +1,6 @@
- GNU nano 7.2               server                        
 #!/bin/bash
 # Averiguamos nuestra IP automáticamente
-IP_ATACANTE="192.168.1.109"
+MI_IP=$(hostname -I | awk '{print $1}')
 
 echo "---------------------------------------------------->
 echo "  ARSENAL DE INTRUSIÓN - PANEL DE CONTROL"
@@ -19,4 +18,7 @@ SERV_PID=$!
 echo "Servidor listo (PID: $SERV_PID). Abre otra terminal >
 echo "nc -lvnp 4444"
 echo "---------------------------------------------------->
+
+
+
 
