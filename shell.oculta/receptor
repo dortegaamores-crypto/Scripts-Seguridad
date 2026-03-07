@@ -1,0 +1,5 @@
+# Genera el certificado (solo una vez)
+openssl req -x509 -newkey rsa:2048 -keyout key.pem -out cert.pem -days 365 -nodes -subj "/C=ES/ST=Hacking/L=Lab/O=Educativo/CN=server"
+
+# Lanza el receptor
+openssl s_server -quiet -key key.pem -cert cert.pem -port 4444
